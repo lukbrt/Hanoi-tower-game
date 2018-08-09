@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>Hanoi tower</title>
+
+    <!-- FONT
+      –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+    
+    <!-- CSS
+      –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/skeleton.css">
+    <link rel="stylesheet" href="scss/style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="playField">
+                <h4>Hanoi Tower</h4>
+                
+                <ul id="sticks">
+                    <li class="stick"></li>
+                    <li class="stick"></li>
+                    <li class="stick"></li>
+                </ul>
+                <div>
+                    
+                </div>
+
+                <div id="discGroup">
+                <ul class="discs" id="group0" ondrop="drop(event)" ondragover="allowDrop(event)">
+                    <!-- <li class="disc" draggable="true"></li>
+                    <li class="disc" draggable="true"></li>
+                    <li class="disc" draggable="true"></li>
+                    <li class="disc" draggable="true"></li> -->
+                </ul>
+
+                <ul class="discs" id="group1" ondrop="drop(event)" ondragover="allowDrop(event)">
+                </ul>
+
+                <ul class="discs" id="group2" ondrop="drop(event)" ondragover="allowDrop(event)">
+                </ul>
+                </div>
+
+                
+                <div class="rectangle"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+.playField {
+  margin-top: 25%;
+  position: relative;
+}
+
+.playField h4 {
+  margin-bottom: 100px;
+}
+
+.rectangle {
+  width: 100%;
+  height: 100px;
+  background-color: burlywood;
+  border-radius: 10px;
+  -webkit-transform: skewX(50deg);
+          transform: skewX(50deg);
+  -webkit-box-shadow: 8px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 8px 6px rgba(0, 0, 0, 0.1);
+  margin-top: -60px;
+}
+
+#sticks, .discs {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+ul#sticks {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+li.stick {
+  width: 15px;
+  height: 200px;
+  background-color: brown;
+  z-index: 1;
+  border-style: outset;
+  border-width: 5px 3px 0 0;
+  border-color: coral;
+}
+
+div#discGroup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+ul.discs {
+  width: 120px;
+  height: 200px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: 42px;
+  padding: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+li.disc {
+  width: 120px;
+  height: 15px;
+  margin: 0 auto;
+  background-color: cadetblue;
+  background: -webkit-gradient(linear, left top, left bottom, from(0), color-stop(cadetblue), to(#589da0));
+  background: linear-gradient(0, cadetblue, #589da0);
+  border-radius: 4px 4px 0 0;
+  z-index: 2;
+  border: 2px outset #d2f1f3;
+  border-bottom: 0;
+  border-left: 0;
+}
+/*# sourceMappingURL=style.css.map */
