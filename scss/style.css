@@ -7,7 +7,7 @@ html {
 
 html::after {
   content: "";
-  background-image: url(/BuddahBg.svg);
+  background-image: url(../BuddahBg.svg);
   background-repeat: no-repeat;
   background-size: cover;
   opacity: 0.08;

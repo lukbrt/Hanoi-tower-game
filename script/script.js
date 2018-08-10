@@ -57,6 +57,7 @@ function drop(e)
     var destinationElement = document.getElementById(e.target.id);
     var firstDestinationElement = destinationElement.firstChild;
 
+    // Stick group doesn't have any disc or the highest disc on the pile is wider than the currently kept
     if (!firstDestinationElement.id || getIdNumber(firstDestinationElement.id) > getIdNumber(elementToMove.id))
     {
         destinationElement.insertBefore(elementToMove, firstDestinationElement);
@@ -92,7 +93,6 @@ function clearPlayfield()
 {
     for (var i = 0; i < discGroup.length; i++)
     {
-        // discGroup[i].innerHTML = '';
         while (discGroup[i].firstChild)
         {
             discGroup[i].removeChild(discGroup[i].firstChild);
