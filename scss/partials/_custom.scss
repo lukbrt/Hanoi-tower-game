@@ -4,6 +4,7 @@ html
     height: 100%;
     display: block;
     position: relative;
+    background-color: rgba(111, 203, 209, 1);
 }
 
 html::after
@@ -11,8 +12,9 @@ html::after
     content: "";
     background-image: url(../BuddahBg.svg);
     background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0.08;
+    background-size: contain; //cover
+    background-position: center;
+    opacity: .7; //0.08
     top: 0;
     left: 0;
     bottom: 0;
@@ -21,11 +23,49 @@ html::after
     z-index: -1;   
 }
 
+// @keyframes playfieldAnimation
+// {
+//     0%
+//     {
+//         // transform: translateY(-25%);
+//         opacity: 0;
+//     }
+
+//     100%
+//     {
+//         // transform: translateY(25%);
+//         opacity: 1;
+//     }
+// }
+
+// @mixin mainAnimation()
+// {
+//     animation: playfieldAnimation;
+//     -moz-transition-property: all;
+//     -o-transition-property: all;
+//     -webkit-transition-property: all;
+//     transition-property: all;
+
+//     transition-delay: 0.5s;
+//     transition-duration: 1.5s;
+//     animation-iteration-count: 1;
+//     transition-timing-function: ease-in-out;
+//     animation-fill-mode: forwards;
+// }
+
+// h4#logo
+// {
+//     opacity: 0;
+//     @include mainAnimation();
+// }
+
 .playField
 {
     // margin-top: 25%;
     position: relative;
     top: -200px;
+
+    //     @include mainAnimation();
 }
 
 .pushDown
@@ -48,6 +88,8 @@ html::after
     box-shadow: 8px 6px  rgba(0,0,0, .1);
 
     margin-top: -60px;
+
+    // @include mainAnimation();
 }
 
 #sticks
@@ -80,6 +122,7 @@ li.stick
     border-width: 5px 3px 0 0;
     border-color: coral;
     
+    // @include mainAnimation();
 }
 
 div#discGroup
@@ -117,6 +160,8 @@ li.disc
     border-left: 0;
     // border-top: 2px solid greenyellow;
         // opacity: .9;
+
+    // @include mainAnimation();
 }
 
 #header

@@ -7,11 +7,6 @@ var discGroup = discGroups.querySelectorAll("ul");
 var range = document.getElementById("customRange2");
 var counterElement = document.getElementById("counter");
 
-// for (var i = 0; i < discAmount; i++)
-// {
-//     alert(discGroup[i].innerHTML);
-// }
-// document.addEventListener('click', function(){alert(discGroup.length)}, false);
 
 function initializeDiscs()
 {
@@ -30,7 +25,6 @@ function initializeDiscs()
         firstStickContent += width + 'px;\"';
         firstStickContent += 'ondragstart=\"drag(event)\"' + '></li>';
         discGroup[0].innerHTML = firstStickContent;
-        // 'ondrop = \"drop(event)\" ondragover = \"allowDrop(event)\"' + 
     }
 }
 
@@ -58,11 +52,17 @@ function drop(e)
     var firstDestinationElement = destinationElement.firstChild;
 
     // Stick group doesn't have any disc or the highest disc on the pile is wider than the currently kept
-    if (!firstDestinationElement.id || getIdNumber(firstDestinationElement.id) > getIdNumber(elementToMove.id))
+    if (firstDestinationElement == null) //|| isNaN(firstDestinationElement)
+    {
+        destinationElement.appendChild(elementToMove);
+        incrementCounter();
+    }
+    else if (getIdNumber(firstDestinationElement.id) > getIdNumber(elementToMove.id))
     {
         destinationElement.insertBefore(elementToMove, firstDestinationElement);
-
         incrementCounter();
+                // alert("greater than..");
+        checkWin();
     }
 }
 
@@ -107,6 +107,20 @@ function incrementCounter()
     moveCounter++;
     counterElement.innerText = moveCounter;
     
+}
+
+function checkWin()
+{
+    // alert("maybe you'll win..");
+    if (discGroup[2].childElementCount == discAmount)
+    {
+        var message = "Awesome, you won! You needed " + moveCounter + "swaps. That mean you defeated the monk in the background and now end of the world become... but meanwhile - wanna play again? When you click OK, the pile will be incremented.";
+        setTimeout(alert(message), 500);
+        newDiscAmount = discAmount + 1;
+        clearPlayfield();
+        discAmount = newDiscAmount;
+        initializeDiscs();
+    }
 }
 
 initializeDiscs();
