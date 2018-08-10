@@ -123,6 +123,6 @@ function checkWin()
     }
 }
 
-initializeDiscs();
 range.addEventListener('mouseup', chooseDiscAmount, false);
-resetCounter();
+clearPlayfield();
+initializeDiscs();
