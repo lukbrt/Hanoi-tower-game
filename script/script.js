@@ -1,5 +1,5 @@
 var initialDiscWidth = 120;
-var discAmount = 7;
+var discAmount = 4;
 
 var discGroups = document.getElementById("discGroup");
 var discGroup = discGroups.querySelectorAll("ul");

@@ -1,13 +1,42 @@
-.playField
+html
 {
-    margin-top: 25%;
+    width: 100%;
+    height: 100%;
+    display: block;
     position: relative;
 }
 
-.playField h4
+html::after
 {
-    margin-bottom: 100px;
+    content: "";
+    background-image: url(/BuddahBg.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 0.08;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;   
 }
+
+.playField
+{
+    // margin-top: 25%;
+    position: relative;
+    top: -200px;
+}
+
+.pushDown
+{
+    margin-top: 25%;
+}
+
+// .playField h4
+// {
+//     margin-bottom: 100px;
+// }
 
 .rectangle
 {
@@ -21,11 +50,12 @@
     margin-top: -60px;
 }
 
-// #sticksContainer
-// {
-//     position: absolute;
-//     top: -300px;
-// }
+#sticks
+{
+    position: relative;
+    top: 275px;
+    // left: 200px;
+}
 
 #sticks, .discs
 {
@@ -68,7 +98,9 @@ ul.discs
     margin-top: 42px;
     padding: 0;
 
-    background-color: rgba(0,0,0, .2);
+    // background-color: rgba(0,0,0, .2);
+
+    z-index: 2;
 }
 
 li.disc
@@ -79,10 +111,26 @@ li.disc
     background-color: cadetblue;
     background: linear-gradient(0, cadetblue, rgb(88, 157, 160));
     border-radius: 4px 4px 0 0;
-    z-index: 2;
+    z-index: 10;
     border: 2px outset rgb(210, 241, 243);
     border-bottom: 0;
     border-left: 0;
     // border-top: 2px solid greenyellow;
         // opacity: .9;
+}
+
+@media screen and (max-height: 880px)
+{
+    .pushDown
+    {
+        margin-top: 20%;
+    }
+}
+
+@media screen and (max-height: 650px)
+{
+    .pushDown
+    {
+        margin-top: 40px;
+    }
 }

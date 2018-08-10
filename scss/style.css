@@ -1,10 +1,31 @@
-.playField {
-  margin-top: 25%;
+html {
+  width: 100%;
+  height: 100%;
+  display: block;
   position: relative;
 }
 
-.playField h4 {
-  margin-bottom: 100px;
+html::after {
+  content: "";
+  background-image: url(/BuddahBg.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.08;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;
+}
+
+.playField {
+  position: relative;
+  top: -200px;
+}
+
+.pushDown {
+  margin-top: 25%;
 }
 
 .rectangle {
@@ -17,6 +38,11 @@
   -webkit-box-shadow: 8px 6px rgba(0, 0, 0, 0.1);
           box-shadow: 8px 6px rgba(0, 0, 0, 0.1);
   margin-top: -60px;
+}
+
+#sticks {
+  position: relative;
+  top: 275px;
 }
 
 #sticks, .discs {
@@ -69,7 +95,7 @@ ul.discs {
           justify-content: flex-end;
   margin-top: 42px;
   padding: 0;
-  background-color: rgba(0, 0, 0, 0.2);
+  z-index: 2;
 }
 
 li.disc {
@@ -80,9 +106,21 @@ li.disc {
   background: -webkit-gradient(linear, left top, left bottom, from(0), color-stop(cadetblue), to(#589da0));
   background: linear-gradient(0, cadetblue, #589da0);
   border-radius: 4px 4px 0 0;
-  z-index: 2;
+  z-index: 10;
   border: 2px outset #d2f1f3;
   border-bottom: 0;
   border-left: 0;
+}
+
+@media screen and (max-height: 880px) {
+  .pushDown {
+    margin-top: 20%;
+  }
+}
+
+@media screen and (max-height: 650px) {
+  .pushDown {
+    margin-top: 40px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
