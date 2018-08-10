@@ -30,7 +30,7 @@ html::after
 
 .pushDown
 {
-    margin-top: 25%;
+    margin-top: 20%;
 }
 
 // .playField h4
@@ -119,11 +119,32 @@ li.disc
         // opacity: .9;
 }
 
+#header
+{
+    margin-top: 25px;
+}
+
+input.custom-range
+{
+    margin-top: 10px;
+}
+
+#counter
+{
+    height: 24px;
+    margin-left: 10px;
+    padding: 6px 12px;
+    font-size: 20px;
+    font-weight: bolder;
+    background-color: rgba(127, 255, 212, .8);
+    border-radius: 50%;
+}
+
 @media screen and (max-height: 880px)
 {
     .pushDown
     {
-        margin-top: 20%;
+        margin-top: 10%;
     }
 }
 
@@ -131,6 +152,6 @@ li.disc
 {
     .pushDown
     {
-        margin-top: 40px;
+        margin-top: 20px;
     }
 }

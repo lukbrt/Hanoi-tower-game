@@ -25,7 +25,7 @@ html::after {
 }
 
 .pushDown {
-  margin-top: 25%;
+  margin-top: 20%;
 }
 
 .rectangle {
@@ -112,15 +112,33 @@ li.disc {
   border-left: 0;
 }
 
+#header {
+  margin-top: 25px;
+}
+
+input.custom-range {
+  margin-top: 10px;
+}
+
+#counter {
+  height: 24px;
+  margin-left: 10px;
+  padding: 6px 12px;
+  font-size: 20px;
+  font-weight: bolder;
+  background-color: rgba(127, 255, 212, 0.8);
+  border-radius: 50%;
+}
+
 @media screen and (max-height: 880px) {
   .pushDown {
-    margin-top: 20%;
+    margin-top: 10%;
   }
 }
 
 @media screen and (max-height: 650px) {
   .pushDown {
-    margin-top: 40px;
+    margin-top: 20px;
   }
 }
 /*# sourceMappingURL=style.css.map */

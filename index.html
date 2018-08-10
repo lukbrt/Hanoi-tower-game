@@ -14,6 +14,8 @@
 
     <!-- CSS
       –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" -->
+        <!-- crossorigin="anonymous"> -->
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/skeleton.css">
     <link rel="stylesheet" href="scss/style.css">
@@ -21,9 +23,18 @@
 
 <body>
     <div class="container">
-        <div class="row pushDown">
+        <div class="row" id="header">
+            <h4 class="eight columns">Hanoi Tower <span id="counter"></span></h4>
 
-            <h4>Hanoi Tower</h4>
+            <div class="four columns" style="float:right;">
+                <label for="customRange2">Set amount of discs</label>
+                <input type="range" class="custom-range six columns" min="3" max="7" step="1" id="customRange2">
+            </div>
+
+
+        </div>
+
+        <div class="row pushDown">
 
             <div class="playField">
                 <!-- <div id="sticksContainer"> -->

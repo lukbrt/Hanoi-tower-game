@@ -1,8 +1,11 @@
 var initialDiscWidth = 120;
-var discAmount = 4;
+var discAmount = 4; //4 is the default value
+var moveCounter = 0;
 
 var discGroups = document.getElementById("discGroup");
 var discGroup = discGroups.querySelectorAll("ul");
+var range = document.getElementById("customRange2");
+var counterElement = document.getElementById("counter");
 
 // for (var i = 0; i < discAmount; i++)
 // {
@@ -12,6 +15,10 @@ var discGroup = discGroups.querySelectorAll("ul");
 
 function initializeDiscs()
 {
+    // 
+    discGroups = document.getElementById("discGroup");
+    discGroup = discGroups.querySelectorAll("ul");
+    // 
     var firstStickContent = discGroup[0].innerHTML;
     var width;
     var ratio = initialDiscWidth / discAmount;
@@ -53,6 +60,20 @@ function drop(e)
     if (!firstDestinationElement.id || getIdNumber(firstDestinationElement.id) > getIdNumber(elementToMove.id))
     {
         destinationElement.insertBefore(elementToMove, firstDestinationElement);
+
+        incrementCounter();
+    }
+}
+
+function chooseDiscAmount(e)
+{
+    var newValue = range.value;
+    if (newValue !== discAmount)
+    {
+        discAmount = range.value;
+        clearPlayfield();
+
+        initializeDiscs();
     }
 }
 
@@ -61,4 +82,33 @@ function getIdNumber(id)
     return id.replace("disc", '');
 }
 
+function resetCounter() 
+{
+    moveCounter = 0;
+    counterElement.innerText = moveCounter;
+}
+
+function clearPlayfield()
+{
+    for (var i = 0; i < discGroup.length; i++)
+    {
+        // discGroup[i].innerHTML = '';
+        while (discGroup[i].firstChild)
+        {
+            discGroup[i].removeChild(discGroup[i].firstChild);
+        }
+    }
+
+    resetCounter();
+}
+
+function incrementCounter()
+{
+    moveCounter++;
+    counterElement.innerText = moveCounter;
+    
+}
+
 initializeDiscs();
+range.addEventListener('mouseup', chooseDiscAmount, false);
+resetCounter();
