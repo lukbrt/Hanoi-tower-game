@@ -7,12 +7,11 @@ var discGroup = discGroups.querySelectorAll("ul");
 var range = document.getElementById("customRange2");
 var counterElement = document.getElementById("counter");
 
-
 function initializeDiscs()
 {
     // 
-    discGroups = document.getElementById("discGroup");
-    discGroup = discGroups.querySelectorAll("ul");
+    // discGroups = document.getElementById("discGroup");
+    // discGroup = discGroups.querySelectorAll("ul");
     // 
     var firstStickContent = discGroup[0].innerHTML;
     var width;
@@ -51,19 +50,22 @@ function drop(e)
     var destinationElement = document.getElementById(e.target.id);
     var firstDestinationElement = destinationElement.firstChild;
 
-    // Stick group doesn't have any disc or the highest disc on the pile is wider than the currently kept
-    if (firstDestinationElement == null) //|| isNaN(firstDestinationElement)
+    if (e.target.tagName.toLowerCase() === 'ul')
     {
-        destinationElement.appendChild(elementToMove);
-        incrementCounter();
+        // Stick group doesn't have any disc or the highest disc on the pile is wider than the currently kept
+        if (firstDestinationElement == null) //|| isNaN(firstDestinationElement)
+        {
+            destinationElement.appendChild(elementToMove);
+            incrementCounter();
+        }
+        else if (getIdNumber(firstDestinationElement.id) > getIdNumber(elementToMove.id)) {
+            destinationElement.insertBefore(elementToMove, firstDestinationElement);
+            incrementCounter();
+            // alert("greater than..");
+            checkWin();
+        }
     }
-    else if (getIdNumber(firstDestinationElement.id) > getIdNumber(elementToMove.id))
-    {
-        destinationElement.insertBefore(elementToMove, firstDestinationElement);
-        incrementCounter();
-                // alert("greater than..");
-        checkWin();
-    }
+
 }
 
 function chooseDiscAmount(e)
